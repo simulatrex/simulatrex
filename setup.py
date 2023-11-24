@@ -12,9 +12,9 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/simulatrex/simulatrex",
-    packages=find_packages(where="src"),
+    packages=find_packages(where="package"),
     include_package_data=True,
-    package_dir={"": "src"},
+    package_dir={"": "package"},
     package_data={
         "simulatrex": ["llm_utils/prompt_templates/*.txt"],
     },
