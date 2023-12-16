@@ -5,13 +5,13 @@ File: think.py
 Description: Think and create memories based  on environment settings
 
 """
-from simulatrex.memory import MemoryUnitModel
-from simulatrex.environment import BaseEnvironment
-from simulatrex.config import AgentIdentity
+from simulatrex.agent.memory import MemoryUnitModel
+from simulatrex.agent.utils.types import AgentMemory
+from simulatrex.experiments.possibleworlds.config import AgentIdentity
+from simulatrex.experiments.possibleworlds.environment import BaseEnvironment
 from simulatrex.llm_utils.prompts import PromptManager, TemplateType
 from simulatrex.llm_utils.models import BaseLanguageModel
 from simulatrex.utils.log import SingletonLogger
-from .types import AgentMemory
 
 _logger = SingletonLogger
 

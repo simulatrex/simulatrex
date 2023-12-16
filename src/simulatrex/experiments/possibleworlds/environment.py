@@ -9,13 +9,13 @@ from datetime import timedelta
 from enum import Enum
 from typing import List
 
-from simulatrex.agent_utils.types import CognitiveModel
+from simulatrex.agent.utils.types import CognitiveModel
 from simulatrex.llm_utils.models import OpenAILanguageModel
 from simulatrex.llm_utils.prompts import PromptManager, TemplateType
 from simulatrex.utils.log import SingletonLogger
 from simulatrex.utils.time_utils import TimeUtils
-from simulatrex.event import Event, EventEngine
-from simulatrex.config import SimulationTimeConfig
+from simulatrex.experiments.possibleworlds.event import Event, EventEngine
+from simulatrex.experiments.possibleworlds.config import SimulationTimeConfig
 
 _logger = SingletonLogger
 

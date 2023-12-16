@@ -7,12 +7,12 @@ Description: Evaluation Processor
 """
 from typing import List
 
-from simulatrex.agent import LLMAgent
-from simulatrex.config import Evaluation
-from simulatrex.environment import BaseEnvironment
+from simulatrex.experiments.possibleworlds.environment import BaseEnvironment
+from simulatrex.agent.utils.types import CognitiveModel
+from simulatrex.agent.agent import LLMAgent
+from simulatrex.experiments.possibleworlds.config import Evaluation
 from simulatrex.llm_utils.prompts import PromptManager, TemplateType
 from simulatrex.llm_utils.models import OpenAILanguageModel
-from simulatrex.agent_utils.types import CognitiveModel
 from simulatrex.utils.log import SingletonLogger
 
 _logger = SingletonLogger

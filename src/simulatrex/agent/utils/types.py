@@ -8,7 +8,7 @@ Description: Shared agent types
 from enum import Enum
 from typing import Dict, List
 
-from simulatrex.memory import LongTermMemory, ShortTermMemory
+from simulatrex.agent.memory import LongTermMemory, ShortTermMemory
 
 
 class AgentType(Enum):

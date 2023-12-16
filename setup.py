@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="simulatrex",
-    version="0.0.4.1",
+    version="0.0.5",
     author="Dominik Scherm",
     author_email="me@dominikscherm.de",
     description="LLM-based simulation framework",

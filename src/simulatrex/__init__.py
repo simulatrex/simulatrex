@@ -1,1 +1,1 @@
-from .engine import SimulationEngine
+from .possibleworlds.engine import SimulationEngine

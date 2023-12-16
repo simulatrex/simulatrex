@@ -10,9 +10,9 @@ import uuid
 
 from pydantic import BaseModel
 
-from simulatrex.db import SqliteDB, MemoryUnitDB
+from simulatrex.agent.db import SqliteDB, MemoryUnitDB
+from simulatrex.agent.vectordb import VectorDB
 from simulatrex.utils.log import SingletonLogger
-from simulatrex.vectordb import VectorDB
 
 _logger = SingletonLogger
 

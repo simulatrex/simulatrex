@@ -7,8 +7,11 @@ Description: Spawn Agent Utility
 """
 from typing import List, Optional
 import uuid
-from simulatrex.agent import LLMAgent
-from simulatrex.config import AgentIdentity, InitialConditions
+from simulatrex.experiments.possibleworlds.config import (
+    AgentIdentity,
+    InitialConditions,
+)
+from simulatrex.agent.agent import LLMAgent
 from simulatrex.llm_utils.models import BaseLanguageModel
 from simulatrex.llm_utils.prompts import PromptManager, TemplateType
 from simulatrex.utils.log import SingletonLogger

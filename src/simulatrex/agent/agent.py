@@ -2,25 +2,25 @@
 Author: Dominik Scherm (dom@simulatrex.ai)
 
 File: agent.py
-Description: Defines an agent, central unit in our simulation
+Description: Defines an agent
 
 """
 from typing import Dict, List, Union
 import uuid
 from pydantic import BaseModel
 
-from simulatrex.environment import BaseEnvironment
-from simulatrex.config import (
+from simulatrex.experiments.possibleworlds.environment import BaseEnvironment
+from simulatrex.experiments.possibleworlds.event import Event
+from simulatrex.experiments.possibleworlds.config import (
     AgentIdentity,
     InitialConditions,
     AgentRelationship,
     AgentGroup,
     Objective,
 )
-from simulatrex.agent_utils.types import AgentType, AgentMemory, CognitiveModel
-from simulatrex.agent_utils.perceive import perceive
-from simulatrex.agent_utils.think import think
-from simulatrex.event import Event
+from simulatrex.agent.utils.types import AgentType, AgentMemory, CognitiveModel
+from simulatrex.agent.perceive import perceive
+from simulatrex.agent.think import think
 from simulatrex.utils.log import SingletonLogger
 from simulatrex.llm_utils.models import OpenAILanguageModel, LlamaLanguageModel
 from simulatrex.llm_utils.prompts import PromptManager, TemplateType
@@ -121,6 +121,7 @@ class LLMAgent(BaseAgent):
                 f"Model {self.cognitive_model_id} not implemented yet"
             )
 
+    # Used for perception
     async def perceive_event(
         self,
         event: Event,
@@ -135,6 +136,7 @@ class LLMAgent(BaseAgent):
             event,
         )
 
+    # Used for thinking
     async def think(self, environment: BaseEnvironment):
         # Based on the provided envrioment make some thoughts
         await think(self.cognitive_model, self.memory, self.identity, environment)

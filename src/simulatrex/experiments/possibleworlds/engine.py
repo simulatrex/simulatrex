@@ -9,15 +9,18 @@ import re
 import pandas as pd
 from typing import List
 
-from simulatrex.config import Config
-from simulatrex.agent import LLMAgent
-from simulatrex.environment import (
+from simulatrex.experiments.possibleworlds.config import Config
+from simulatrex.agent.agent import LLMAgent
+from simulatrex.experiments.possibleworlds.environment import (
     StaticEnvironment,
     DynamicEnvironment,
     EnvironmentType,
 )
-from simulatrex.evaluation import EvaluationEngine
-from simulatrex.target_group import TargetGroup, TargetGroupRelationship
+from simulatrex.experiments.possibleworlds.evaluation import EvaluationEngine
+from simulatrex.experiments.possibleworlds.target_group import (
+    TargetGroup,
+    TargetGroupRelationship,
+)
 from simulatrex.utils.json_utils import JSONHelper
 from simulatrex.utils.log import SingletonLogger
 
