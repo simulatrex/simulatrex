@@ -1,12 +1,13 @@
-from simulatrex.audiences import TargetAudience
+import asyncio
+import dotenv
+from simulatrex import TargetAudience
 
-# Define a target audience
+dotenv.load_dotenv()
+
 audience = (
-    TargetAudience()
+    TargetAudience(id="Ealry adopters")
     .age_range(25, 40)
     .interests(["technology", "innovation"])
-    .location("North America")
-    .income_range(50000, 100000)
 )
 
 print(audience.describe())

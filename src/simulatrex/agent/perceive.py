@@ -7,8 +7,8 @@ Description: Perceive the current enviroment and what is happening
 """
 from simulatrex.agent.utils.types import AgentMemory
 from simulatrex.experiments.possibleworlds.config import AgentIdentity
-from simulatrex.experiments.possibleworlds import BaseEnvironment
-from simulatrex.experiments.possibleworlds import Event
+from simulatrex.experiments.possibleworlds.environment import BaseEnvironment
+from simulatrex.experiments.possibleworlds.event import Event
 from simulatrex.llm_utils.prompts import PromptManager, TemplateType
 from simulatrex.llm_utils.models import BaseLanguageModel
 from simulatrex.utils.log import SingletonLogger

@@ -57,7 +57,7 @@ class BaseAgent:
         id: str,
         type: AgentType,
         identity: AgentIdentity,
-        initial_conditions: InitialConditions,
+        # initial_conditions: InitialConditions,
         relationships: List[AgentRelationship] = [],
         group_affiliations: List[str] = [],
     ):
@@ -65,17 +65,11 @@ class BaseAgent:
         self.type = type
 
         self.identity = identity
-        self.initial_conditions = initial_conditions
 
         self.relationships = relationships
         self.group_affiliations = group_affiliations
 
-        self.memory = AgentMemory(
-            self.id,
-            decay_factor=initial_conditions["decay_factor"]
-            if initial_conditions and "decay_factor" in initial_conditions
-            else 0.995,
-        )
+        self.memory = AgentMemory(self.id, decay_factor=0.995)
 
 
 class LLMAgent(BaseAgent):
@@ -84,14 +78,12 @@ class LLMAgent(BaseAgent):
         id: str,
         type: AgentType,
         identity: AgentIdentity,
-        initial_conditions: InitialConditions,
         cognitive_model_id: str,
+        # initial_conditions: InitialConditions,
         relationships: List[AgentRelationship] = [],
         group_affiliations: List[str] = [],
     ):
-        super().__init__(
-            id, type, identity, initial_conditions, relationships, group_affiliations
-        )
+        super().__init__(id, type, identity, relationships, group_affiliations)
 
         self.cognitive_model_id = cognitive_model_id
         self.cognitive_model = None
@@ -275,3 +267,10 @@ class LLMAgent(BaseAgent):
             self.message_queue = [
                 msg for msg in self.message_queue if msg.id != message.id
             ]
+
+    async def ask(self, question: str):
+        """
+        Ask a question to the agent
+        """
+        reponse = await self.cognitive_model.ask(question)
+        return reponse
